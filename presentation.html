@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>Retail Sales Dashboard Presentation</title>
+<style>
+body{margin:0;font-family:Segoe UI,Arial,sans-serif;background:#0f172a;color:#e2e8f0}
+.slide{display:none;min-height:100vh;padding:60px;box-sizing:border-box}
+.slide.active{display:flex;flex-direction:column;justify-content:center}
+h1{font-size:48px;color:#38bdf8;margin:0 0 20px}
+h2{font-size:32px;color:#38bdf8;margin:0 0 16px}
+p,li{font-size:22px;line-height:1.5;color:#cbd5e1}
+ul{max-width:900px}
+.nav{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);display:flex;gap:12px}
+button{padding:10px 20px;border:none;border-radius:8px;background:#38bdf8;color:#0f172a;font-weight:700;cursor:pointer}
+.counter{position:fixed;top:20px;right:20px;color:#94a3b8}
+</style></head><body>
+<div class="slide active"><h1>Retail Sales Performance & Analysis Dashboard</h1><p>Major Assignment — Group of 3</p><p>Members: Hammadamjad, Ahsan Khan, Huzaifa Khan</p></div>
+<div class="slide"><h2>Problem Statement</h2><p>Retail businesses need quick insights into sales performance across categories, regions, and time.</p></div>
+<div class="slide"><h2>Objective</h2><ul><li>Build an interactive dashboard for retail sales</li><li>Support any CSV dataset</li><li>Provide KPIs and visual analytics</li></ul></div>
+<div class="slide"><h2>Features</h2><ul><li>Login authentication</li><li>CSV upload (adaptive columns)</li><li>KPIs: total, orders, average, top group</li><li>Charts: bar, pie, trend line</li><li>Filters by category/region</li></ul></div>
+<div class="slide"><h2>Technology Stack</h2><ul><li>HTML, CSS, JavaScript</li><li>Chart.js for visualizations</li><li>GitHub Pages for hosting</li></ul></div>
+<div class="slide"><h2>Architecture</h2><p>Client-side only: data parsed in browser, charts rendered dynamically. No backend required.</p></div>
+<div class="slide"><h2>Demo</h2><p>Live: https://shayaankhan223-byte.github.io/retail-dashboard/</p></div>
+<div class="slide"><h2>Conclusion</h2><p>Delivered an adaptive, modern, web-based retail analytics dashboard.</p><p>Thank you!</p></div>
+<div class="counter" id="counter">1/8</div>
+<div class="nav"><button onclick="prev()">Prev</button><button onclick="next()">Next</button></div>
+<script>
+const slides=document.querySelectorAll('.slide'); let i=0;
+function show(n){slides[i].classList.remove('active'); i=(n+slides.length)%slides.length; slides[i].classList.add('active'); document.getElementById('counter').textContent=(i+1)+'/'+slides.length;}
+function next(){show(i+1)} function prev(){show(i-1)}
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight')next(); if(e.key==='ArrowLeft')prev();});
+</script></body></html>
